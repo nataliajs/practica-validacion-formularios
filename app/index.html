@@ -9,6 +9,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -16,20 +17,188 @@
     <!-- endbuild -->
   </head>
   <body>
+	  <div class="container">
+	  <div class="jumbotron">
+	    <h2>Práctica validación formularios</h2>
+	    <p>Natalia Jiménez Sánchez</p>
+	    </div>
+	    <div class="col-md-6">
+		  <form role="form" id="formulario">
+			  <fieldset>
+			  <legend>Información de contacto</legend>
+				  <div class="form-group">
+					  <label for="nombre">Nombre</label>
+					  <input type="text" class="form-control input-sm" name="nombre" id="nombre">
+				  </div>
+				  <div class="form-group">
+					    <label for="apellidos">Apellidos</label>
+					    <input type="text" class="form-control  input-sm" name="apellidos" id="apellidos">
+				  </div>
+				  <div class="form-group">
+					    <label for="telefono">Telefono</label>
+					    <input type="text" class="form-control  input-sm" name="telefono" id="telefono">
+				  </div>
+				  <div class="form-group">
+					    <label for="email">Email address</label>
+					    <input type="email" class="form-control input-sm" name="email" id="email">
+				  </div>
+				  <div class="form-group">
+					    <label for="email2">Repetir email</label>
+					    <input type="email" class="form-control input-sm" name="email2" id="email2">
+				  </div>
+				  <div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">¿Cómo nos has conocido?
+				  	<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Prefiero no contestar</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Publicidad</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profesionales del sector</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Internet</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">A través de un amigo o conocido</a></li>
+				  </ul>
+				</div>
+				<br>
+			 </fieldset>
 
+			  <fieldset>
+			  <legend>Datos de facturación</legend>
+			  		<p>Demandante</p>
+				    <div class="radio">
+				      <label><input type="radio" name="optradio" class="required" checked>Particular</label>
+				    </div>
+				    <div class="radio">
+				      <label><input type="radio" name="optradio">Empresa</label>
+				    </div>
+				  <div class="form-group">
+					    <label for="cif">CIF/NIF</label>
+					    <input type="text" class="form-control input-sm" name="cif" id="cif">
+				  </div>
+				    <div class="form-group">
+					    <label for="nombreempresa">Nombre/Empresa</label>
+					    <input type="nombre" class="form-control input-sm" name="nombreempresa" id="nombreempresa">
+				  </div>
+				  <div class="form-group">
+					    <label for="direccion">Dirección</label>
+					    <input type="text" class="form-control input-sm" name="direccion" id="direccion">
+				  </div>
+				  <div class="form-group">
+					    <label for="cp">CP</label>
+					    <input type="text" class="form-control input-sm" name="cp" id="cp">
+				  </div>
+				  <div class="form-group">
+					    <label for="localidad">Localidad</label>
+					    <input type="text" class="form-control input-sm" name="localidad" id="localidad">
+				  </div>				  
+				  <div class="form-group">
+					    <label for="provincia">Provincia</label>
+					    <input type="text" class="form-control input-sm" name="provincia" id="provincia">
+				  </div>				  
+				  <div class="form-group">
+					    <label for="pais">Pais</label>
+					    <input type="text" class="form-control input-sm" name="pais" id="pais">
+				  </div>				  
+				  <div class="form-group">
+					    <label for="iban">IBAN</label>
+					    <input type="text" class="form-control input-sm" name="iban" id="iban">
+				  </div>				  
+
+				  <div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Forma de pago
+				  	<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mensual</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Trimestral</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Anual</a></li>
+				  </ul>
+				</div>
+				<br>  
+			 </fieldset>	
+			<fieldset>
+			  <legend>Datos de acceso</legend>
+				  <div class="form-group">
+					    <label for="usuario">usuario</label>
+					    <input type="text" class="form-control input-sm" name="usuario" id="usuario">
+				  </div>
+				  <div class="form-group">
+					    <label for="contraseña">contraseña</label>
+					    <input type="text" class="form-control input-sm" name="contraseña" id="contraseña">
+				  </div>
+				  <div class="form-group">
+					    <label for="repetircontraseña">Repetir contraseña</label>
+					    <input type="text" class="form-control input-sm" id="repetircontraseña">
+				  </div>				  				  
+			</fieldset>		 
+		<!--  
+		  <div class="form-group">
+		    <label for="exampleInputFile">File input</label>
+		    <input type="file" id="exampleInputFile">
+		    <p class="help-block">Example block-level help text here.</p>
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		 -->
+		</form>
+		</div>
+	</div>
+<!--
     <div class="hero-unit">
       <h1>Práctica validación formularios</h1>
       <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
     </div>
-
+-->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+    <script type="text/javascript">
+
+		    $("#formulario").validate({
+		    	rules:{
+		    		nombre:{
+		    			required: true,
+		    			minlength: 2
+		    		},
+		    		apellidos: "required",
+		    		telefono: {
+		    			required: true,
+		    			minlength: 9,
+		    			digits: true
+		    		},
+		    		email: {
+		    			required: true,
+		    			email: true
+		    		},
+		    		email2:{
+		    			required: true,
+		    			equalTo: email
+		    		},
+		    		cif: "required",
+		    		nombreempresa: "required",
+		    		direccion: "required",
+		    		cp: "required",
+		    		localidad: "required",
+		    		provincia: "required",
+		    		pais: "required",
+		    		iban: "required",
+		    		usuario: "required",
+		    		contraseña: "required"
+		    	}
+		    });
+
+    </script>
 </body>
 </html>
