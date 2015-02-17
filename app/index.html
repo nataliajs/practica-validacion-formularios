@@ -23,113 +23,112 @@
 	    <p>Natalia Jiménez Sánchez</p>
 	    </div>
 	    <div class="col-md-6">
-		  <form role="form" id="formulario">
+		  <form role="form" id="formulario" method="POST" novalidate>
 			  <fieldset>
 			  <legend>Información de contacto</legend>
 				  <div class="form-group">
-					  <label for="nombre">Nombre</label>
+					  <label for="nombre">Nombre<span class="important">*</span></label>
 					  <input type="text" class="form-control input-sm" name="nombre" id="nombre">
 				  </div>
 				  <div class="form-group">
-					    <label for="apellidos">Apellidos</label>
+					    <label for="apellidos">Apellidos<span class="important">*</span></label>
 					    <input type="text" class="form-control  input-sm" name="apellidos" id="apellidos">
 				  </div>
 				  <div class="form-group">
-					    <label for="telefono">Telefono</label>
+					    <label for="telefono">Telefono<span class="important">*</span></label>
 					    <input type="text" class="form-control  input-sm" name="telefono" id="telefono">
 				  </div>
 				  <div class="form-group">
-					    <label for="email">Email address</label>
+					    <label for="email">Email address<span class="important">*</span></label>
 					    <input type="email" class="form-control input-sm" name="email" id="email">
 				  </div>
 				  <div class="form-group">
 					    <label for="email2">Repetir email</label>
 					    <input type="email" class="form-control input-sm" name="email2" id="email2">
 				  </div>
-				  <div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">¿Cómo nos has conocido?
-				  	<span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Prefiero no contestar</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Publicidad</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profesionales del sector</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Internet</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">A través de un amigo o conocido</a></li>
-				  </ul>
+				  <div class="form-group">
+				  	<label for="sel1">¿Cómo nos has conocido?</label>
+				  	<select class="form-control" id="sel1">
+						<option>Prefiero no contestar</option>
+						<option>Publicidad</option>
+						<option>Profesionales del sector</option>
+						<option>Internet</option>
+						<option>A través de un amigo o conocido</option>
+					</select>
 				</div>
 				<br>
 			 </fieldset>
 
 			  <fieldset>
 			  <legend>Datos de facturación</legend>
-			  		<p>Demandante</p>
+			  		<label>Demandante<span class="important">*</span></label>
 				    <div class="radio">
-				      <label><input type="radio" name="optradio" class="required" checked>Particular</label>
+				      <label><input type="radio" name="optradio" class="required" id="particular" checked>Particular</label>
 				    </div>
 				    <div class="radio">
-				      <label><input type="radio" name="optradio">Empresa</label>
+				      <label><input type="radio" name="optradio" id="empresa">Empresa</label>
 				    </div>
 				  <div class="form-group">
-					    <label for="cif">CIF/NIF</label>
+					    <label for="cif" id="cifnif">NIF<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="cif" id="cif">
 				  </div>
 				    <div class="form-group">
-					    <label for="nombreempresa">Nombre/Empresa</label>
+					    <label for="nombreempresa" id="nombreemp">Nombre<span class="important">*</span></label>
 					    <input type="nombre" class="form-control input-sm" name="nombreempresa" id="nombreempresa">
 				  </div>
 				  <div class="form-group">
-					    <label for="direccion">Dirección</label>
+					    <label for="direccion">Dirección<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="direccion" id="direccion">
 				  </div>
 				  <div class="form-group">
-					    <label for="cp">CP</label>
+					    <label for="cp" id="cp">CP<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="cp" id="cp">
 				  </div>
 				  <div class="form-group">
-					    <label for="localidad">Localidad</label>
+					    <label for="localidad">Localidad<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="localidad" id="localidad">
 				  </div>				  
 				  <div class="form-group">
-					    <label for="provincia">Provincia</label>
+					    <label for="provincia">Provincia<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="provincia" id="provincia">
 				  </div>				  
 				  <div class="form-group">
-					    <label for="pais">Pais</label>
+					    <label for="pais">Pais<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="pais" id="pais">
 				  </div>				  
 				  <div class="form-group">
-					    <label for="iban">IBAN</label>
+					    <label for="iban">IBAN<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="iban" id="iban">
 				  </div>				  
 
-				  <div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Forma de pago
-				  	<span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mensual</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Trimestral</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Anual</a></li>
-				  </ul>
+				  <div class="form-group">
+				  	<label for="sel2">Selecciona la forma de pago<span class="important">*</span></label>
+				  	<select class="form-control" id="sel2">
+						<option>Mensual</option>
+						<option>Trimestral</option>
+						<option>Anual</option>
+					</select>
 				</div>
 				<br>  
 			 </fieldset>	
 			<fieldset>
 			  <legend>Datos de acceso</legend>
 				  <div class="form-group">
-					    <label for="usuario">usuario</label>
+					    <label for="usuario">Usuario<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="usuario" id="usuario">
 				  </div>
 				  <div class="form-group">
-					    <label for="contraseña">contraseña</label>
-					    <input type="text" class="form-control input-sm" name="contraseña" id="contraseña">
+					    <label for="password">Contraseña<span class="important">*</span></label>
+					    <input type="password" class="form-control input-sm" name="password" id="password">
+					    
+					    <meter value="0" id="complex" min="0" max="30"></meter>
+
 				  </div>
 				  <div class="form-group">
 					    <label for="repetircontraseña">Repetir contraseña</label>
 					    <input type="text" class="form-control input-sm" id="repetircontraseña">
 				  </div>				  				  
-			</fieldset>		 
+			</fieldset>	<br><br><br><br><br><br><br>	 
 		<!--  
 		  <div class="form-group">
 		    <label for="exampleInputFile">File input</label>
@@ -158,47 +157,15 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery.complexify.js/jquery.complexify.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/localization.js"></script>
+        <script src="scripts/iban.js"></script>
         <!-- endbuild -->
-    <script type="text/javascript">
-
-		    $("#formulario").validate({
-		    	rules:{
-		    		nombre:{
-		    			required: true,
-		    			minlength: 2
-		    		},
-		    		apellidos: "required",
-		    		telefono: {
-		    			required: true,
-		    			minlength: 9,
-		    			digits: true
-		    		},
-		    		email: {
-		    			required: true,
-		    			email: true
-		    		},
-		    		email2:{
-		    			required: true,
-		    			equalTo: email
-		    		},
-		    		cif: "required",
-		    		nombreempresa: "required",
-		    		direccion: "required",
-		    		cp: "required",
-		    		localidad: "required",
-		    		provincia: "required",
-		    		pais: "required",
-		    		iban: "required",
-		    		usuario: "required",
-		    		contraseña: "required"
-		    	}
-		    });
-
-    </script>
+    
 </body>
 </html>
