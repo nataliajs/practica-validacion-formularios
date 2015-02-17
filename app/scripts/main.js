@@ -69,6 +69,13 @@ $("#cp").focusout(function(){
 	if(dig.lenght()==4){
 		$("#cp").val("0" + dig);
 	}
+	var cp= $("#cp").val();
+	var promise = $.ajax({
+		type: 'GET',
+		"url" : "../php/postales.php",
+		"dataType": "json",
+		data : {cp : cp}
+	});
 });
 
 //cuando se completan los apellidos se rellena Nombre en los datos de facturación
