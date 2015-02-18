@@ -63,7 +63,7 @@ $("#empresa").change(function(){
 	}
 })
 
-//relleno el CP con ceros si no tiene 5 dígitos
+//relleno el CP con ceros si no tiene 5 dígitos y busco municipio y provincia en la base de datos
 $("#cp").focusout(function(){
 	var dig= $("#cp").val();
 	if(dig.lenght()==4){
@@ -71,10 +71,17 @@ $("#cp").focusout(function(){
 	}
 	var cp= $("#cp").val();
 	var promise = $.ajax({
-		type: 'GET',
+		type: 'POST',
 		"url" : "../php/postales.php",
 		"dataType": "json",
 		data : {cp : cp}
+	});
+	promise.done(function(data){
+		$("#localidad").attr("value" , data["municipio"]);
+		$("provincia").attr("value" , data["provincia"]);
+	});
+	promise.fail(function(){
+		console.log("Error al importar municipio y provincia");
 	});
 });
 
