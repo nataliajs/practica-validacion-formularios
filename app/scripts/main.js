@@ -14,13 +14,17 @@
 		    		},
 		    		email: {
 		    			required: true,
-		    			email: true
+		    			email: true,
+		    			remote: 'php/comprobar_mail.php'
 		    		},
 		    		email2:{
 		    			required: true,
 		    			equalTo: email
 		    		},
-		    		cif: "required",
+		    		cif: {
+		    			required: true,
+		    			remote: 'php/comprobar_dni.php'
+		    		},
 		    		nombreempresa: "required",
 		    		direccion: "required",
 		    		cp: {
@@ -40,7 +44,31 @@
 		    			required: true,
 		    			minlength: 4
 		    		},
-		    		contraseña: "required"
+		    		contraseña: {
+		    			required: true,
+		    			minlength: 6
+		    		}
+		    	},
+		    	messages:{
+		    		email:{
+		    			remote: jQuery.validator.format('{0} ya existe! Prueba con otro.')
+		    		},
+		    		cif:{
+		    			remote: jQuery.validator.format('El usuario con DNI: {0} ya existe.')
+		    		},
+		    		localidad:"No existe una localidad con el CP introducido. Introduce un CP correcto.",
+		    		provincia:"No existe una provincia con el CP introducido. Introduce un CP correcto."
+		    	},
+		    	submitHandler: function(){
+		    		var usuario=$("#usuario").val();
+		    		var precio=$("option[name='pago']:checked").val();
+		    		var confir=confirm("El usuario "+usuario+" va a ser dado de alta. Se le cobrara la primera cuota de "+precio+" euros.");
+		    		if(confir){
+		    			alert("Usuario dado de alta");
+		    			window.location.reload();
+		    		}else{
+		    			alert("El usuario no ha sido dado de alta");
+		    		}
 		    	}
 		    });
 
@@ -66,19 +94,24 @@ $("#empresa").change(function(){
 //relleno el CP con ceros si no tiene 5 dígitos y busco municipio y provincia en la base de datos
 $("#cp").focusout(function(){
 	var dig= $("#cp").val();
-	if(dig.lenght()==4){
+	var n=dig.length;
+	if(n==4){
 		$("#cp").val("0" + dig);
 	}
-	var cp= $("#cp").val();
+	var cp=null;
+	cp= $("#cp").val();
 	var promise = $.ajax({
-		type: 'POST',
-		"url" : "../php/postales.php",
-		"dataType": "json",
+		type: 'GET',
+		url : "php/postales.php",
+		dataType: "json",
 		data : {cp : cp}
 	});
 	promise.done(function(data){
-		$("#localidad").attr("value" , data["municipio"]);
-		$("provincia").attr("value" , data["provincia"]);
+			$("#localidad").attr("value" , data[0].municipio);
+			$("#provincia").attr("value" , data[0].provincia);
+			console.log("Localidad y municipio importados");
+			$("#localidad").prop("readonly",true);
+			$("#provincia").prop("readonly",true);
 	});
 	promise.fail(function(){
 		console.log("Error al importar municipio y provincia");

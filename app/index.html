@@ -81,16 +81,16 @@
 					    <input type="text" class="form-control input-sm" name="direccion" id="direccion">
 				  </div>
 				  <div class="form-group">
-					    <label for="cp" id="cp">CP<span class="important">*</span></label>
+					    <label for="cp">CP<span class="important">*</span></label>
 					    <input type="text" class="form-control input-sm" name="cp" id="cp">
 				  </div>
 				  <div class="form-group">
 					    <label for="localidad">Localidad<span class="important">*</span></label>
-					    <input type="text" class="form-control input-sm" name="localidad" id="localidad">
+					    <input type="text" class="form-control input-sm" name="localidad" id="localidad" value="">
 				  </div>				  
 				  <div class="form-group">
 					    <label for="provincia">Provincia<span class="important">*</span></label>
-					    <input type="text" class="form-control input-sm" name="provincia" id="provincia">
+					    <input type="text" class="form-control input-sm" name="provincia" id="provincia" value="">
 				  </div>				  
 				  <div class="form-group">
 					    <label for="pais">Pais<span class="important">*</span></label>
@@ -104,9 +104,9 @@
 				  <div class="form-group">
 				  	<label for="sel2">Selecciona la forma de pago<span class="important">*</span></label>
 				  	<select class="form-control" id="sel2">
-						<option>Mensual</option>
-						<option>Trimestral</option>
-						<option>Anual</option>
+						<option name="pago" id="mensual" value="50">Mensual</option>
+						<option name="pago" id="trimestral" value="140">Trimestral</option>
+						<option name="pago" id="anual" value="550">Anual</option>
 					</select>
 				</div>
 				<br>  
@@ -126,7 +126,7 @@
 				  </div>
 				  <div class="form-group">
 					    <label for="repetircontraseña">Repetir contraseña</label>
-					    <input type="text" class="form-control input-sm" id="repetircontraseña">
+					    <input type="password" class="form-control input-sm" id="repetircontraseña">
 				  </div>				  				  
 			</fieldset>		 
 
