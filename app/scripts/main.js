@@ -15,7 +15,7 @@
 		    		email: {
 		    			required: true,
 		    			email: true,
-		    			remote: 'php/comprobar_mail.php'
+		    			remote: 'http://nataliajimenez.infenlaces.com/dist/php/comprobar_mail.php'
 		    		},
 		    		email2:{
 		    			required: true,
@@ -23,7 +23,7 @@
 		    		},
 		    		cif: {
 		    			required: true,
-		    			remote: 'php/comprobar_dni.php'
+		    			remote: 'http://nataliajimenez.infenlaces.com/dist/php/comprobar_dni.php'
 		    		},
 		    		nombreempresa: "required",
 		    		direccion: "required",
@@ -102,7 +102,7 @@ $("#cp").focusout(function(){
 	cp= $("#cp").val();
 	var promise = $.ajax({
 		type: 'GET',
-		url : "php/postales.php",
+		url : "http://nataliajimenez.infenlaces.com/dist/php/postales.php",
 		dataType: "json",
 		data : {cp : cp}
 	});
