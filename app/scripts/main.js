@@ -21,9 +21,26 @@
 		    			required: true,
 		    			equalTo: email
 		    		},
-		    		cif: {
-		    			required: true,
-		    			remote: 'http://nataliajimenez.infenlaces.com/dist/php/comprobar_dni.php'
+		    		documentNumber: {
+		    			/*required: true,
+		    			remote: 'http://nataliajimenez.infenlaces.com/dist/php/comprobar_dni.php'*/
+                        required: true,
+                        nifES: function() {
+                            if ($('#particular').is(":checked") ){
+                                return true;
+                            }
+                        },
+                        
+                        remote: function() {
+                            if ($('#particular').is(":checked") ) {
+                                return 'http://nataliajimenez.infenlaces.com/dist/php/comprobar_dni.php';
+                            }
+                        },		   
+                        cifES: function(){
+                        	if($('#empresa').is(":checked")){
+								return true;
+							}
+                        }			
 		    		},
 		    		nombreempresa: "required",
 		    		direccion: "required",
@@ -53,7 +70,7 @@
 		    		email:{
 		    			remote: jQuery.validator.format('{0} ya existe! Prueba con otro.')
 		    		},
-		    		cif:{
+		    		documentNumber:{
 		    			remote: jQuery.validator.format('El usuario con DNI: {0} ya existe.')
 		    		},
 		    		localidad:"No existe una localidad con el CP introducido. Introduce un CP correcto.",
